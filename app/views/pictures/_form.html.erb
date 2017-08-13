@@ -1,0 +1,31 @@
+<%= form_with(model: picture, local: true) do |form| %>
+  <% if picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+
+      <ul>
+      <% picture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :picture_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :picture_description, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :picture %>
+    <%= form.text_field :picture, id: :picture_picture, class: "form-control" %>
+  </div>
+
+  <%= form.submit class: "btn btn-primary" %>
+  
+<% end %>

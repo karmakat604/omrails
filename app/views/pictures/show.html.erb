@@ -1,0 +1,23 @@
+<div class="container">
+
+	<p>
+	  <strong>User:</strong>
+	  <%= @picture.user %>
+	</p>
+
+	<p>
+	  <strong>Description:</strong>
+	  <%= @picture.description %>
+	</p>
+
+	<p>
+	  <strong>Picture:</strong>
+	  <%= @picture.picture %>
+	</p>
+
+	<% if @picture.user == current_user %>
+		<%= link_to 'Edit', edit_picture_path(@picture) %> |
+	<% end %>
+	<%= link_to 'Back', pictures_path %>
+
+</div>
